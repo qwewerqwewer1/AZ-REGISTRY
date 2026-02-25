@@ -264,6 +264,12 @@ body {
   background: rgba(25, 118, 210, 0.12);
   color: var(--v-primary);
 }
+.v-chip--copy {
+  cursor: copy;
+}
+.v-chip--copy:hover {
+  background: rgba(25, 118, 210, 0.2);
+}
 .v-chip--secondary {
   background: var(--v-outline-variant);
   color: var(--v-on-surface-muted);
@@ -393,4 +399,18 @@ body {
   gap: var(--v-spacing);
   padding: calc(var(--v-spacing) * 2) calc(var(--v-spacing) * 3);
   border-top: 1px solid var(--v-outline-variant);
+}
+
+.v-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  min-width: 160px;
+  max-width: 320px;
+  padding: 10px 14px;
+  border-radius: var(--v-radius-md);
+  color: var(--v-on-primary);
+  background: rgba(33, 33, 33, 0.95);
+  box-shadow: var(--v-elevation-2);
 }
