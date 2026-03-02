@@ -4,17 +4,17 @@ import {
   TAB_GROUPS,
   DEPT_PALETTE,
   UNASSIGNED_DEPARTMENT,
-} from "/js/constants.js";
+} from "AZ-REGESTRY/js/constants.js";
 
-import { hashString, filterByQuery } from "/js/utils.js";
-import { parseExcel } from "/js/excel-service.js";
+import { hashString, filterByQuery } from "AZ-REGESTRY/js/utils.js";
+import { parseExcel } from "AZ-REGESTRY/js/excel-service.js";
 import {
   AppBar,
   Toolbar,
   UserCard,
   EmptyState,
   EditDialog,
-} from "/js/components.js";
+} from "AZ-REGESTRY/js/components.js";
 
 const App = {
   name: "App",
