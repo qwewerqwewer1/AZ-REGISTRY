@@ -127,7 +127,8 @@ const Toolbar = {
             <button type="button" class="v-btn v-btn--variant-outlined" @click="$refs.fileInput?.click()">
               Загрузить Excel
             </button>
-            <button type="button" class="v-btn v-btn--variant-flat v-btn--primary" @click="$emit('add')">
+            <!-- Add class when the btn is active: v-btn--primary -->
+            <button type="button" disabled class="v-btn v-btn--variant-flat " @click="$emit('add')">
               Добавить запись
             </button>
           </div>
