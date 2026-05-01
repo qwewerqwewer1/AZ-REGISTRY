@@ -3,12 +3,3 @@ echo "node_modules/
 dist/
 .DS_Store
 *.log" > .gitignore
-
-# 2. Добавь его в git
-git add .gitignore
-
-# 3. Закоммить
-git commit -m "Add .gitignore back"
-
-# 4. Запушь
-git push origin gh-pages --force
