@@ -1,0 +1,305 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/public/fonts/jetbrains-mono-v24-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/public/fonts/jetbrains-mono-v24-latin-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/public/fonts/jetbrains-mono-v24-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Unbounded";
+  src: url("/public/fonts/unbounded-v12-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: url("/public/fonts/unbounded-v12-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: url("/public/fonts/unbounded-v12-latin-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #42b883;
+  --green-dim: rgba(66, 184, 131, 0.12);
+  --navy: #141826;
+  --navy2: #1a1f35;
+  --card: #1e2438;
+  --card2: #232a42;
+  --border: rgba(66, 184, 131, 0.15);
+  --border2: rgba(255, 255, 255, 0.07);
+  --text: #e8eaf0;
+  --muted: #6b7494;
+  --accent: #f0c060;
+  --danger: #e05555;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--navy);
+  color: var(--text);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(
+      ellipse 70% 50% at 85% 5%,
+      rgba(66, 184, 131, 0.06) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 5% 90%,
+      rgba(66, 184, 131, 0.04) 0%,
+      transparent 60%
+    );
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.btn--outline {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--muted);
+}
+.btn--outline:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+.btn--outline:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.btn--primary {
+  background: var(--green);
+  color: #0d1a12;
+  font-weight: 700;
+  border-color: var(--green);
+}
+.btn--primary:hover {
+  background: #55d49a;
+}
+.btn--primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border2);
+  color: var(--muted);
+}
+.btn--ghost:hover {
+  border-color: var(--muted);
+  color: var(--text);
+}
+.btn--danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #fff;
+  font-weight: 700;
+}
+.btn--danger:hover {
+  background: #f06060;
+}
+.btn--icon {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.btn--icon:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+}
+
+/* ── CHIPS ── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.65rem;
+  border-radius: 6px;
+  padding: 3px 8px;
+  letter-spacing: 0.3px;
+}
+.chip--ip {
+  background: var(--green-dim);
+  border: 1px solid rgba(66, 184, 131, 0.25);
+  color: var(--green);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+  user-select: none;
+}
+.chip--ip:hover {
+  background: rgba(66, 184, 131, 0.2);
+  border-color: rgba(66, 184, 131, 0.5);
+}
+.chip--ip.copied {
+  background: rgba(66, 184, 131, 0.25);
+  border-color: var(--green);
+}
+.chip--mac {
+  background: rgba(240, 192, 96, 0.08);
+  border: 1px solid rgba(240, 192, 96, 0.22);
+  color: var(--accent);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+  user-select: none;
+}
+.chip--mac:hover {
+  background: rgba(240, 192, 96, 0.16);
+  border-color: rgba(240, 192, 96, 0.5);
+}
+.chip--mac.copied {
+  background: rgba(240, 192, 96, 0.22);
+  border-color: var(--accent);
+}
+.chip__icon {
+  font-style: normal;
+  font-size: 0.68rem;
+  min-width: 10px;
+}
+.chip--secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border2);
+  color: var(--muted);
+}
+
+/* ── SOFT PILLS ── */
+.soft-pill {
+  font-size: 0.58rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(66, 184, 131, 0.1);
+  border: 1px solid rgba(66, 184, 131, 0.2);
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── INPUT ── */
+.input {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.82rem;
+  padding: 9px 12px 9px 34px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input:focus {
+  border-color: var(--green);
+}
+.input::placeholder {
+  color: var(--muted);
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 3px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
