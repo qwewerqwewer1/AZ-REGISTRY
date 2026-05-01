@@ -1,31 +1,14 @@
-# Зависимости
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Файлы окружения
-.env
-.env.local
-.env.*.local
-
-# Редакторы и IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# 1. Создай новый .gitignore
+echo "node_modules/
+dist/
 .DS_Store
-Thumbs.db
+*.log" > .gitignore
 
-# Логи
-logs/
-*.log
+# 2. Добавь его в git
+git add .gitignore
 
-# Временные файлы
-*.tmp
-*.temp
-.cache/
+# 3. Закоммить
+git commit -m "Add .gitignore back"
 
-# Системные файлы
-desktop.ini
+# 4. Запушь
+git push origin gh-pages --force
