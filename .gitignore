@@ -1,5 +1,0 @@
-# 1. Создай новый .gitignore
-echo "node_modules/
-dist/
-.DS_Store
-*.log" > .gitignore
